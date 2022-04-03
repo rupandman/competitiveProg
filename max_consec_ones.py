@@ -1,11 +1,13 @@
+# Maximum consecutive ones 
+
 a = int(input())
 b = int(input())
 x = a ^ b
 y = a * b
 z = a + b
-binx = [int(i) for i in bin(x).replace('0b', '')]
-biny = [int(i) for i in bin(y).replace('0b', '')]
-binz = [int(i) for i in bin(z).replace('0b', '')]
+binx = [int(i) for i in bin(x).replace('0b', '')] # or [int(i) for i in bin(x)[2:] 
+biny = [int(i) for i in bin(y).replace('0b', '')] # or [int(i) for i in bin(y)[2:]
+binz = [int(i) for i in bin(z).replace('0b', '')] # or [int(i) for i in bin(z)[2:]
 
 def consec1s(x):
     count=0
