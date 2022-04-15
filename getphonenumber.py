@@ -11,11 +11,13 @@ def getPhoneNumber(number):
             res.append(f"double {dic[i[0]]}")
         if len(i)==3:
             res.append(f"triple {dic[i[0]]}")
-        if len(i)>3 and (len(i)+1)%3==0:
+        if len(i)==4:
+            res.append((f"double {dic[i[0]]} "*2).strip())
+        if len(i)>4 and (len(i)+1)%3==0:
             res.extend(((f"triple {dic[i[0]]} " * (len(i) // 3)).rstrip(), "double " + dic[i[0]]))
-        if len(i)>3 and (len(i)+2)%3==0:
+        if len(i)>4 and (len(i)+2)%3==0:
             res.extend(((f"triple {dic[i[0]]} " * (len(i) // 3)).rstrip(),dic[i[0]]))
-        if len(i)>3 and len(i)%3==0:
+        if len(i)>4 and len(i)%3==0:
             res.append((f"triple {dic[i[0]]} " * (len(i) // 3)).rstrip())
 
     return " ".join(res)
